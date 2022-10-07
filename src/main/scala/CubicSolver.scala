@@ -63,17 +63,6 @@ class CubicSolver {
     println("-----------------------------------------")
   }
 
-  def printNodesLatex(): Unit = {
-    println("-----------------------------------------")
-    nodes.foreachEntry((k, v) => {
-      println(s"$k.sol = ${v.sol}")
-      println(s"$k.succ = ${v.succ}")
-      println(s"$k.cond = ${v.cond}")
-      println()
-    })
-    println("-----------------------------------------")
-  }
-
   def printSolution(): Unit = {
     nodes.foreachEntry((v, n) => println(s"$v = ${n.sol}"))
   }
