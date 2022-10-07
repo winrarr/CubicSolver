@@ -19,22 +19,17 @@ class CubicSolver {
   }
 
   private def addEdge(x: String, y: String): Unit = {
-    if (x != y) {
-      if (x.succ.add(y)) {
-        x.sol.foreach(t => addToken(t, y))
-      }
-    }
+    if (x != y && x.succ.add(y))
+      x.sol.foreach(t => addToken(t, y))
   }
 
   private def propagate(): Unit = {
     while (W.nonEmpty) {
       val (t, x) = W.dequeue()
-      for ((y, z) <- x.cond(t)) {
+      for ((y, z) <- x.cond(t))
         addEdge(y, z)
-      }
-      for (y <- x.succ) {
+      for (y <- x.succ)
         addToken(t, y)
-      }
     }
   }
 
