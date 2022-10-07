@@ -13,9 +13,8 @@ class CubicSolver {
   }
 
   private def addToken(t: String, x: String): Unit = {
-    if (x.sol.add(t)) {
+    if (x.sol.add(t))
       W += ((t, x))
-    }
   }
 
   private def addEdge(x: String, y: String): Unit = {
